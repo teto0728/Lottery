@@ -4,30 +4,25 @@ import java.text.NumberFormat;
 
 public class Main {
 
-    static void rand(int array[], int a) {
-        Setting setting1 = new Setting();
+    public static void rand(int array[], int a) {
+        Setting setting1  = new Setting();
 
-        NumberFormat comFormat = NumberFormat.getNumberInstance(); // カンマ区切り
+        NumberFormat comFormat = NumberFormat.getNumberInstance(); // 数字のカンマ区切り
 
-        // 購入数字設定
-        int c1; // choice1個目
-        int c2;
-        int c3;
-        int c4;
-        int c5;
-        int c6;
-        int c7;
 
         // 疑似設定
-        c1 = 1;
-        c2 = 2;
-        c3 = 3;
-        c4 = 4;
-        c5 = 5;
-        c6 = 6;
-        c7 = 7;
+        setting1.c1 = 1;
+        setting1.c2 = 2;
+        setting1.c3 = 3;
+        setting1.c4 = 4;
+        setting1.c5 = 5;
+        setting1.c6 = 6;
+        setting1.c7 = 7;
 
-        int[] buy = { c1, c2, c3, c4, c5, c6, c7 }; // 購入数字の配列作成
+        int[] buy = { setting1.c1, setting1.c2, setting1.c3, setting1.c4, setting1.c5, setting1.c6, setting1.c7 }; // 購入数字の配列作成
+
+        
+        //TxtField.frame(buy, setting1);
 
         for (int i = 0; i <= 100; i++) {
             // 乱数生成----------------------
@@ -87,7 +82,7 @@ public class Main {
             System.out.println(i + "回目");
             System.out.println("これまでの合計使用金額" + comFormat.format(setting1.totalAmount) + "円");
             System.out.println("これまでの合計当選回数" + setting1.electedCount + "回");
-            System.out.println("これまでの合計金額" + comFormat.format(setting1.sum) + "円");
+            System.out.println("これまでの合計当選金額" + comFormat.format(setting1.sum) + "円");
 
             if (setting1.totalAmount >= setting1.sum) {
                 setting1.lossAndgain = "赤字";
@@ -98,7 +93,6 @@ public class Main {
             setting1.result = Math.abs(setting1.totalAmount - setting1.sum);
             System.out.println("結果" + comFormat.format(setting1.result) + "円の" + setting1.lossAndgain + "です。");
 
-            // TxtField.frame(mainnum, subnum, buy, sum);
 
         }
 

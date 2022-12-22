@@ -1,0 +1,29 @@
+
+/*
+* TxtField.java
+*/
+import java.awt.BorderLayout;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class TxtField extends JFrame {
+
+    public static void frame(int[] buy, Setting setting1) {
+
+        final JFrame frame = new JFrame("宝くじシュミレーター");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JTextField text = new JTextField(); 
+        frame.add(text);
+        frame.pack();
+        frame.setSize(300, 220);
+        frame.setVisible(true);
+        text.setVisible(true);
+    }
+}
